@@ -1,0 +1,29 @@
+<div class="container-fluid ">
+  <div class="row">
+    <div class="col-lg-9 bg-secondary">
+      <h1>AJIO</h1>
+      <div class="row">
+        <div *ngFor="let product of products" class="col-lg-4" style="gap:15px;margin-top: 20px;">
+          <app-card
+            [product]="product"
+            (addProduct)="insertProduct($event)"
+          ></app-card>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 bg-dark color-white text-light">
+      <h4 style="margin-left: 70px;">CART ITEMS</h4>
+      <ol class="list-group list-group-numbered mt-5">
+        <app-carditem
+          *ngFor="let item of cartItems"
+          [item]="item"
+          (removeFromCart)="removeItem($event)"
+          (decrease) = "decrease($event)"
+          (increase) = "increase($event)"
+        >
+        </app-carditem>
+      </ol>
+      <h4 style="margin-left: 50px;">Total Payable : ${{ total }}</h4>
+    </div>
+  </div>
+</div>
