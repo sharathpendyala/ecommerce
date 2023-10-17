@@ -2,9 +2,9 @@
   <img [src]="product?.image"  class="card-img-top img-fluid" alt="..." />
   <div class="card-body">
     <h5 class="card-title">{{ product?.title | slice : 0 : 20 }}</h5>
-    <p class="card-text">{{ product?.description | slice : 0 : 30 }}</p>
+    <p class="card-text">{{ product?.summary | slice : 0 : 30 }}</p>
     <button (click)="addToCart(product!)" class="btn btn-primary">
-      Rs.{{ product?.price }} Add to Cart
+      Rs.{{ product?.price?.value }} Add to Cart
     </button>
   </div>
 </div>

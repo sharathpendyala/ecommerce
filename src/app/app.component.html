@@ -1,9 +1,29 @@
+<div>
+  <h1 style = "margin-left: 500px;">BOOK STORE</h1>
+        <div class="container">
+          <nav class="navbar navbar-light bg-light w-50 p-2 mt-3">
+            <form class="form-inline d-flex ">
+              <input
+                class="form-control"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+                [(ngModel)]="searchvalue"
+                name = " searchfilter"
+              />
+              <button class="btn btn-outline-success my-2 my-sm-0 ms-2" type="submit">
+                Search
+              </button>
+            </form>
+          </nav>
+          <p style="margin-top: 10px;">Searching Results For... {{searchvalue}}</p>
+</div>
+
 <div class="container-fluid ">
   <div class="row">
-    <div class="col-lg-9 bg-secondary">
-      <h1>AJIO</h1>
+    <div class="col-lg-9 bg-secondary">      
       <div class="row">
-        <div *ngFor="let product of products" class="col-lg-4" style="gap:15px;margin-top: 20px;">
+        <div *ngFor="let product of searchedproducts" class="col-lg-4" style="gap:15px;margin-top: 20px;">
           <app-card
             [product]="product"
             (addProduct)="insertProduct($event)"

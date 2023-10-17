@@ -1,12 +1,15 @@
 import {  Component, EventEmitter, Input, Output  } from '@angular/core';
 interface Product {
-  id: number;
-  title: string;
-  price: number;
-  description: string;
-  category: string;
-  image: string;
-  rating: { rate: number; count: number };
+  id: number,
+  title: string,
+  author: string,
+  summary: string,
+  image:string,
+  price: {
+    currency: string,
+    value: number,
+    displayValue: string
+  }
 }
 @Component({
   selector: 'app-carditem',
